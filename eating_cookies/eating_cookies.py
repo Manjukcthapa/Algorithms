@@ -1,12 +1,29 @@
 #!/usr/bin/python
 
+#According to question:
+#Given a jar of cookies with "n" amount inside
+#How many way we can eat all n cookies
+#Way of eating might  be 0,1,2,or 3 at  a time
+# It can be negative(assuming)
+#
+
 import sys
 
 # The cache parameter is here for if you want to implement
 # a solution that is more efficient than the naive 
 # recursive solution
-def eating_cookies(n, cache=None):
-  pass
+
+def eating_cookies(n, cache={}):
+  if n < 0:
+    return 0
+  elif n == 0:
+    return 1
+  elif n not in cache:
+    cache[n] = eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
+  return cache[n]
+print(eating_cookies(5))
+  
+
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:

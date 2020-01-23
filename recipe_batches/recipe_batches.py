@@ -18,6 +18,13 @@ def recipe_batches(recipe, ingredients):
         return 0 
 
 
+  #  {'milk': 100, 'butter': 50, 'flour': 5},
+   # {'milk': 301, 'butter': 50, 'flour': 0}
+    # First dic is recpie = How much we need to make
+    # Second dic is ingredients = How much we have currently
+    # If dont have enough then returns zero, else returns how much you can make(1,2,3, etc)       
+
+
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
   # your implementation with different inputs

@@ -7,6 +7,9 @@ def find_max_profit(prices):
 
   for i in range(0, len(prices)):
         for j in range(i + 1, len(prices)):
+   # If the diff of prices[j] - prices[i] is greater
+      # than profit. Update profit to
+         # new profit.
             if prices[j] - prices[i] > profit:
                 profit = prices[j] - prices[i]
   return profit

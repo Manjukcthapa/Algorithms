@@ -3,7 +3,35 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  pass
+
+  batches = 0
+  done = False
+    # need to use try to catch the error from any missing keys when comparing the dictionaries
+  try:
+        # while done == False, run loop
+        while not done:
+            # set the shortage to false at the start
+            shortage = False
+# compare the keys of reciepes and ingredients
+            for key in recipe.keys():
+                # deep subtract the matching recipes from the ingredients
+                ingredients[key] -= recipe[key]
+# if you have none left on any of them, then we're done with 0 batches
+                if ingredients[key] == 0:
+                    done = True
+# if the remaining ingredents are greater than 0
+                elif ingredients[key] < 0:
+                    done = True
+                    shortage = True
+            if not shortage:
+                batches += 1
+# the test checks for butter which isn't in one of the cases
+# this keyError let's it pass without issues over mismatched keys
+  except KeyError:
+        print('That key does not exist')
+  finally:
+        return batches
 
 
 if __name__ == '__main__':

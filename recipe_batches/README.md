@@ -18,10 +18,18 @@ Your function should output the maximum number of whole batches that can be made
 For example
 
 ```python
-# should return 0 since we don't have enough butter!
+# should return 1 since we don't have enough butter!
 recipe_batches(
   { 'milk': 100, 'butter': 50, 'flour': 5 },
-  { 'milk': 138, 'butter': 48, 'flour': 51 }
+  { 'milk': 138, 'butter': 50, 'flour': 51 }
+)
+```
+
+```python
+# should return 3 since we don't have enough butter!
+recipe_batches(
+  { 'milk': 100, 'butter': 50, 'flour': 5 },
+  { 'milk': 300, 'butter': 150, 'flour': 51 }
 )
 ```
 

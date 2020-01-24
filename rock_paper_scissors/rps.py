@@ -3,9 +3,7 @@
 import sys
 
 def rock_paper_scissors(n):
-#Set the  list rock, paper and scissors as a plays
- plays =[]
-#set empty list 
+
 
 
 
